@@ -1,19 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Cancastilho Webpage</title>
-	<script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <meta charset="UTF-8">
+    <title>Cancastilho Webpage</title>
+    <script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    var URL_ARQUIVOS = 'https://api.github.com/repos/cancastilho/docbase/contents';
+
+    function obterListaDeArquivos() {
+        $.ajax({
+            url: URL_ARQUIVOS,
+            headers: {
+                'Accept': 'application/vnd.github.3.raw'
+            },
+            method: 'GET',
+            dataType: 'json',
+            success: mostrarListaDeArquivos
+        });
+    }
+
+    function mostrarListaDeArquivos(arquivos) {
+        var conteudo = $('#conteudo');
+        var html = '<ul id="listaArquivos" class="text-left list-unstyled">';
+        for (var i = arquivos.length - 1; i >= 0; i--) {
+            var link = arquivos[i].download_url;
+            var nome = arquivos[i].name;
+            html += '<li><a href="' + link + '" data-toggle="modal" data-target="#meuModal" >' + nome + '</a></li>';
+        }
+        html += '</ul>';
+        conteudo.html(html);
+        atribuirEventoOnClick();
+    }
+
+   
+
+    $(document).ready(function() {
+        obterListaDeArquivos();
+    });
+    </script>
 </head>
+
 <body>
-<div class="page-header">
-  <h1>Cancastilho <small>**Test**</small></h1>
-</div>
-<ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#">Início</a></li>
-  <li role="presentation"><a href="#">Sobre</a></li>
-  <li role="presentation"><a href="#">Contato</a></li>
-</ul>
+    <div class="container col-lg-6 col-lg-offset-3 text-center">
+        <div class="page-header">
+            <h1>CANCASTILHO</h1>
+        </div>
+        <ul class="list-inline">
+            <li role="presentation" class="active"><a href="#">BASE DE CONHECIMENTO</a></li>
+            <li role="presentation"><a href="#">SOBRE</a></li>
+            <li role="presentation"><a href="#">CONTATO</a></li>
+        </ul>
+        <hr>
+        <div id="conteudo">
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="meuModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 id="tituloModal" class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body" id="conteudoModal">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
