@@ -56,10 +56,15 @@
         atribuirOnclickNoArquivo();
     }
 
+    //Filtrar item por múltiplas palavras em qualquer ordem
     function filtrar(element) {
-        var value = $(element).val();
-        $('#listaArquivos > a:not(:contains(' + value + '))').hide();
-        $('#listaArquivos > a:contains(' + value + ')').show();
+        var tags = $(element).val().split(" ");
+        var filtro='';
+        for (var i = 0; i < tags.length; i++) {
+            filtro = filtro + ':contains('+tags[i]+')';
+        }
+        $('#listaArquivos > a:not('+filtro+')').hide();
+        $('#listaArquivos > a'+filtro).show();
     }
 
     function atribuirOnclickNoArquivo() {
