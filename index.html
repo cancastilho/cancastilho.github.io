@@ -91,11 +91,9 @@
         var titulo = $('#titulo').text();
         if( titulo.endsWith(".html") ){
            campoConteudo.html(resposta);
-        }else if(titulo.endsWith(".txt")) {
+        }else {
            campoConteudo.html('<pre id="txt"></pre>');
            $('#txt').text(resposta);
-        }else{
-            campoConteudo.text('A renderização deste tipo de arquivo ainda não é suportado.');
         }
     }
 
