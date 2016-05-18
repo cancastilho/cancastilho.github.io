@@ -14,14 +14,6 @@
     .text-justify {
         text-align: justify;
     }
-
-    pre { /* Usado para mostrar texto que não está em HTML*/
-        white-space: pre-wrap;       /* CSS 3 */
-        white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-        white-space: -pre-wrap;      /* Opera 4-6 */
-        white-space: -o-pre-wrap;    /* Opera 7 */
-        word-wrap: break-word;       /* Internet Explorer 5.5+ */
-    }
     </style>
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -29,6 +21,8 @@
     <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
     <script type="text/javascript">
     var URL_ARQUIVOS = 'https://api.github.com/repos/cancastilho/docbase/contents';
+    var campoTitulo = $('#titulo');
+    var campoConteudo = $('#conteudo');
 
     function obterListaDeArquivos() {
         $.ajax({
@@ -43,7 +37,6 @@
     }
 
     function mostrarListaDeArquivos(arquivos) {
-        $('#qtdArtigos').text(arquivos.length);
         var conteudo = $('#lista_de_arquivos');
         var html = '<div id="listaArquivos" class="text-left list-group">';
         for (var i = arquivos.length - 1; i >= 0; i--) {
@@ -76,43 +69,29 @@
                 success: mostrarConteudo
             });
             var titulo = $(this).text();
-            $('#titulo').html(titulo);
-            moverParaOTopo();
-            focarNoCampoDePesquisa();
+            campoTitulo.text(titulo);
         });
     }
 
-    function moverParaOTopo(){
-        $('html, body').animate({ scrollTop: 0 }, 'fast');
-    }
-
     function mostrarConteudo(resposta){
-        var campoConteudo = $('#conteudo');
-        var titulo = $('#titulo').text();
-        if( titulo.endsWith(".html") ){
-           campoConteudo.html(resposta);
-        }else if(titulo.endsWith(".txt")) {
-           campoConteudo.html('<pre id="txt"></pre>');
-           $('#txt').text(resposta);
-        }else{
-            campoConteudo.text('A renderização deste tipo de arquivo ainda não é suportado.');
-        }
-    }
+        var titulo = campoTitulo.text();
+        if(titulo.endsWith('.html')){
+            campoConteudo.html(resposta);
+        }else if (titulo.endsWith('.txt')){
+            campoConteudo.html('<pre>'+ resposta+'</pre>' );
+        }else {
 
-    function focarNoCampoDePesquisa () {
-        $('#campoPesquisa').focus();
+        }
     }
 
     $(document).ready(function() {
         obterListaDeArquivos();
-        focarNoCampoDePesquisa();
-        filtrar();
     });
     </script>
 </head>
 
 <body>
-    <div id="cabecalho" class="container text-center">
+    <div class="container text-center">
         <h1 class="page_header">CANCASTILHO</h1>
         <nav class="navbar navbar-default">
             <div class="collapse navbar-collapse">
@@ -129,12 +108,12 @@
             <div class="col-md-4 no-float">
                 <aside class="panel">
                     <div class="panel panel-default">
-                        <div class="panel-heading">(<span id="qtdArtigos"></span>) Artigos</div>
+                        <div class="panel-heading">Artigos</div>
                         <div class="input-group">
                             <span class="input-group-btn">
         <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
       </span>
-                            <input type="text" accesskey="f" id="campoPesquisa" class="form-control" placeholder="Pesquisar por..." onkeyup="filtrar(this)">
+                            <input type="text" accesskey="f" class="form-control" placeholder="Pesquisar por..." onkeyup="filtrar(this)">
                         </div>
                     </div>
                     <div id="lista_de_arquivos"></div>
