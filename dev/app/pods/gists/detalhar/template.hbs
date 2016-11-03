@@ -1,0 +1,6 @@
+ {{#if carregando}}
+     {{partial 'gists/loading'}}
+{{else}}
+	{{!-- {{markdown-render conteudo}} --}}
+	{{component 'gist-view' gist=gist}}
+{{/if}}

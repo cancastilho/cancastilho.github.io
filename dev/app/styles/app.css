@@ -1,0 +1,80 @@
+.page_header {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+pre {
+    /* Usado para mostrar texto que não está em HTML*/
+    white-space: pre-wrap;
+    /* CSS 3 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* Internet Explorer 5.5+ */
+    font-size: 100%;
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: scale(1) rotate(0deg);
+    }
+    to {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+iframe#iframeGist {
+    width: 100%;
+    height: auto;
+}
+
+#dataHora {
+    width: 150px;
+    display: inline-block;
+    }
+
+#descricaoGist {
+    vertical-align: middle;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-transform: capitalize;
+}
+
+#lista_de_arquivos{
+    margin: 0 auto 0 auto;
+    display: block;
+    width: 60%;
+}
+
+
+#gistLink{
+    margin-bottom: 20px;
+}
+
+
+body {
+}

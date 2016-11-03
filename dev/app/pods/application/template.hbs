@@ -1,0 +1,18 @@
+<div id="cabecalho" class="container text-center">
+    <h1 class="page_header">CANCASTILHO</h1><br><br>
+{{!--     <nav class="navbar navbar-default">
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav" style="text-align: center">
+                <li id="base" class="active">{{link-to 'Gists' 'gists'}}</li>
+                <li id="sobre">{{link-to 'Sobre' 'sobre'}}</li>
+            </ul>
+        </div>
+    </nav> --}}
+</div>
+<div class="container">
+{{#if carregando}}
+	 {{partial 'loading'}}
+{{else}}
+   {{outlet}}
+{{/if}}
+</div>

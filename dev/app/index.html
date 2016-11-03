@@ -10,20 +10,19 @@
     <script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
-    
-<meta name="cancastilho/config/environment" content="%7B%22modulePrefix%22%3A%22cancastilho%22%2C%22environment%22%3A%22development%22%2C%22podModulePrefix%22%3A%22cancastilho/pods%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22cancastilho%22%2C%22version%22%3A%220.0.0+6f46786f%22%7D%2C%22exportApplicationGlobal%22%3Atrue%7D" />
+    {{content-for "head"}}
 
-    <link rel="stylesheet" href="/assets/vendor.css">
-    <link rel="stylesheet" href="/assets/cancastilho.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/cancastilho.css">
 
-    
+    {{content-for "head-footer"}}
   </head>
   <body>
-    
+    {{content-for "body"}}
 
-    <script src="/assets/vendor.js"></script>
-    <script src="/assets/cancastilho.js"></script>
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/cancastilho.js"></script>
 
-    
+    {{content-for "body-footer"}}
   </body>
 </html>

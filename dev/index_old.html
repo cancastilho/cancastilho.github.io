@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cancastilho Webpage</title>
+    <style>
+    .page_header {
+        font-family: 'Orbitron', sans-serif;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    
+    .text-justify {
+        text-align: justify;
+    }
+
+    pre { /* Usado para mostrar texto que não está em HTML*/
+        white-space: pre-wrap;       /* CSS 3 */
+        white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+        white-space: -pre-wrap;      /* Opera 4-6 */
+        white-space: -o-pre-wrap;    /* Opera 7 */
+        word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    }
+    </style>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    var URL_ARQUIVOS = 'https://api.github.com/repos/cancastilho/docbase/contents';
+
+    function obterListaDeArquivos() {
+        $.ajax({
+            url: URL_ARQUIVOS,
+            headers: {
+                'Accept': 'application/vnd.github.3.raw'
+            },
+            method: 'GET',
+            dataType: 'json',
+            success: mostrarListaDeArquivos
+        });
+    }
+
+    function mostrarListaDeArquivos(arquivos) {
+        $('#qtdArtigos').text(arquivos.length);
+        var conteudo = $('#lista_de_arquivos');
+        var html = '<div id="listaArquivos" class="text-left list-group">';
+        for (var i = arquivos.length - 1; i >= 0; i--) {
+            var link = arquivos[i].download_url;
+            var nome = arquivos[i].name;
+            html += '<a href="' + link + '" class="list-group-item" data-toggle="modal" data-target="'+ link + '" >' + nome + '</a>';
+        }
+        html += '</div>';
+        conteudo.html(html);
+        atribuirOnclickNoArquivo();
+    }
+
+    //Filtrar item por múltiplas palavras em qualquer ordem
+    function filtrar(element) {
+        var tags = $(element).val().split(" ");
+        var filtro='';
+        for (var i = 0; i < tags.length; i++) {
+            filtro = filtro + ':contains('+tags[i]+')';
+        }
+        $('#listaArquivos > a:not('+filtro+')').hide();
+        $('#listaArquivos > a'+filtro).show();
+    }
+
+    function atribuirOnclickNoArquivo() {
+        $('#listaArquivos > a').on("click", function(evento) {
+            evento.preventDefault();
+            var link = $(this).data('target');
+            $.ajax({
+                url: link,
+                headers: {
+                    'Accept': 'application/vnd.github.3.raw'
+                },
+                method: 'GET',
+                dataType: 'html',
+                success: mostrarConteudo
+            });
+            var titulo = $(this).text();
+            $('#titulo').html(titulo);
+            moverParaOTopo();
+            focarNoCampoDePesquisa();
+        });
+    }
+
+    function moverParaOTopo(){
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
+    }
+
+    function mostrarConteudo(resposta){
+        var campoConteudo = $('#conteudo');
+        var titulo = $('#titulo').text();
+        if( titulo.endsWith(".html") ){
+           campoConteudo.html(resposta);
+        }else {
+           campoConteudo.html('<pre id="txt"></pre>');
+           $('#txt').text(resposta);
+        }
+    }
+
+    function focarNoCampoDePesquisa () {
+        $('#campoPesquisa').focus();
+    }
+
+    $(document).ready(function() {
+        obterListaDeArquivos();
+        focarNoCampoDePesquisa();
+        filtrar();
+    });
+    </script>
+</head>
+
+<body>
+    <div id="cabecalho" class="container text-center">
+        <h1 class="page_header">CANCASTILHO</h1>
+        <nav class="navbar navbar-default">
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav" style="text-align: center">
+                    <li id="base" class="active"><a href="#">BASE DE CONHECIMENTO</a></li>
+                    <li id="sobre"><a href="#">SOBRE</a></li>
+                    <li id="contato"><a href="#">CONTATO</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 no-float">
+                <aside class="panel">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">(<span id="qtdArtigos"></span>) Artigos</div>
+                        <div class="input-group">
+                            <span class="input-group-btn">
+        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+      </span>
+                            <input type="text" accesskey="f" id="campoPesquisa" class="form-control" placeholder="Pesquisar por..." onkeyup="filtrar(this)">
+                        </div>
+                    </div>
+                    <div id="lista_de_arquivos"></div>
+                </aside>
+            </div>
+            <div class="col-md-8 no-float">
+                <div class="panel panel-default">
+                    <div id="titulo" class="panel-heading">Este é um teste de Título</div>
+                    <div id="conteudo" class="panel-body text-justify">
+                        <article id="artigo">
+                           <script src="https://gist.github.com/cancastilho/cdcfd9cec2e99ae9f711094cbc44bd82.js"></script>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
