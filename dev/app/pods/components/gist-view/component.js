@@ -8,11 +8,17 @@ var GistView = Ember.Component.extend({
 
     didRender() {
         this._super(...arguments);
-        let linkEmbeddedGist = `https://gist.github.com/${this.gist.id}.js`;
-        Ember.$.get(linkEmbeddedGist, function(conteudo){
-            let conteudoAjustado = conteudo.replace("document.write('", "").replace("')","");
-            Ember.$('#gist-div').html(conteudoAjustado);
-        });
+        // let linkEmbeddedGist = `https://gist.github.com/${this.gist.id}.js`;
+
+        // //Gambiarra para buscar gist renderizado
+        // var oldDocumentoWrite = document.write;
+        // document.write = function(node){
+        //     Ember.$("#gist-div").html(node);
+        // };
+        // Ember.$.getScript(linkEmbeddedGist,function( data, textStatus, jqxhr ) {
+        //     document.write = oldDocumentoWrite;
+        // });
+
     }
 
 });

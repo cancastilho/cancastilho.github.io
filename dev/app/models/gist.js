@@ -51,6 +51,22 @@ export default DS.Model.extend({
         }
     }),
 
+
+    modificadoEm: computed('updated_at', {
+        get(){
+            let d = this.get('updated_at').split('T')[0].split('-');
+            return `${d[2]}/${d[1]}/${d[0]}`;
+        }
+    }),
+
+    modificadoEmHora: computed('updated_at', {
+        get(){
+            let d = this.get('updated_at').split('T')[1].replace('Z',"").split(":");
+            let ajusteFusoHorario = 2;
+            return `${d[0] - ajusteFusoHorario}:${d[1]}:${d[2]}`;
+        }
+    }),
+
     arquivo: computed('files', {
         get(){
             let files = this.get('files');

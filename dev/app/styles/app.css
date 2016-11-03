@@ -1,27 +1,17 @@
-.page_header {
+h1.page_header {
     font-family: 'Orbitron', sans-serif;
     font-weight: bold;
     letter-spacing: 2px;
+    color:black;
+}
+div#cabecalho > a:link{
+    text-decoration: none;
 }
 
 .text-justify {
     text-align: justify;
 }
 
-pre {
-    /* Usado para mostrar texto que não está em HTML*/
-    white-space: pre-wrap;
-    /* CSS 3 */
-    white-space: -moz-pre-wrap;
-    /* Mozilla, since 1999 */
-    white-space: -pre-wrap;
-    /* Opera 4-6 */
-    white-space: -o-pre-wrap;
-    /* Opera 7 */
-    word-wrap: break-word;
-    /* Internet Explorer 5.5+ */
-    font-size: 100%;
-}
 
 .glyphicon-refresh-animate {
     -animation: spin .7s infinite linear;
@@ -46,11 +36,6 @@ pre {
     }
 }
 
-iframe#iframeGist {
-    width: 100%;
-    height: auto;
-}
-
 #dataHora {
     width: 150px;
     display: inline-block;
@@ -72,9 +57,21 @@ iframe#iframeGist {
 
 
 #gistLink{
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
+div.gist-file{
+    border: none !important;
+}
 
-body {
+div.gist-data{
+    height: 50%;
+}
+
+div.highlight{
+    font-size: 1em !important;
+}
+
+div#gistViewCabecalho{
+    padding: 6px;
 }

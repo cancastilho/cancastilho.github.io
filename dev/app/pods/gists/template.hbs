@@ -7,13 +7,13 @@
             <input type="text" accesskey="f" id="campoPesquisa" class="form-control" placeholder="Pesquisar por..." onkeyup="">
         </div>
     </div> --}}
-        <div  id="lista_de_arquivos" class="center-block text-center list-group">
-        {{#each gists as |gist|}}
-            {{#link-to 'gists.detalhar' gist.id}}
-            <div id="gistLink">
-             <div id="descricaoGist">{{gist.description}}</div>
-              <div id="dataHora">{{gist.criadoEm}} - {{gist.criadoEmHora}}</div> 
-            </div>
-            {{/link-to}}
-        {{/each}}
-        </div>
+<div  id="lista_de_arquivos" class="center-block text-center list-group">
+{{#each gists as |gist|}}
+    <div id="gistLink">
+    {{#link-to 'gists.detalhar' gist.id}}
+     <div id="descricaoGist">{{gist.description}}</div>
+    {{/link-to}}
+      <div id="dataHora">{{gist.criadoEm}} - {{gist.criadoEmHora}}</div> 
+    </div>
+{{/each}}
+</div>

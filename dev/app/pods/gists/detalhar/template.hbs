@@ -1,6 +1,9 @@
  {{#if carregando}}
      {{partial 'gists/loading'}}
 {{else}}
-	{{!-- {{markdown-render conteudo}} --}}
-	{{component 'gist-view' gist=gist}}
+	<div id="gistViewCabecalho">
+		<span>Criado em: </span> {{gist.criadoEm}} - {{gist.criadoEmHora}} <br>
+		<span>Modificado em: </span>{{gist.modificadoEm}} - {{gist.modificadoEmHora}}
+	</div>
+	{{{gistMarkdownJson}}}
 {{/if}}
