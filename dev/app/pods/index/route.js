@@ -1,5 +1,13 @@
 import Ember from 'ember';
-import GistsRoute from '../gists/route';
 
-export default GistsRoute.extend({
+export default Ember.Route.extend({
+
+    model() {
+        return this.store.findAll('gist');
+    },
+
+    setupController(controller, model) {
+        controller.set('gists', model);
+    }
+
 });

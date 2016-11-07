@@ -6,20 +6,23 @@ const{
 export default Ember.Route.extend({
 
     model(params) {
-        let gist = this.store.peekRecord('gist', params.id);
         return Ember.RSVP.hash({
-            gist: gist,
-            // conteudo: $.get(gist.get('arquivo_raw_url')),
+            gist: $.ajax({
+                url: `https://api.github.com/gists/${params.id}`, 
+                dataType: 'jsonp'
+            }),
             gistMarkdownJson: $.ajax({
-                url:`https://gist.github.com/cancastilho/${gist.id}.json`,
+                url:`https://gist.github.com/cancastilho/${params.id}.json`,
                 dataType: 'jsonp'
             })
         });
     },
 
     setupController(controller, model) {
-        controller.set('gist', model.gist);
-        controller.set('conteudo', model.conteudo);
+        var gist = this.store.normalize('gist',model.gist.data);
+        this.store.push(gist);
+        var gistObj = this.store.peekRecord('gist', gist.data.id);
+        controller.set('gist', gistObj);
         controller.set('gistMarkdownJson', model.gistMarkdownJson.div);
     }
 
