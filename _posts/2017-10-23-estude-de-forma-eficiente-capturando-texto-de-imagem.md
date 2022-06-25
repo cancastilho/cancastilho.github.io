@@ -1,0 +1,17 @@
+---
+layout: post
+title: "Estude de forma eficiente capturando texto de imagem"
+date: 2017-10-23 00:00:00 -0300
+tags: captura dicas-de-estudo ferramenta ocr produtividade screenshot windows
+---
+
+<p><img src="/imagens/capture-to-text-icone.png" alt="Capture2Text" /></p>
+<p>Faz algum tempo que senti a necessidade de ter uma ferramenta de captura de tela com o recurso de reconhecimento de texto (OCR). Com frequência, vejo palestras, aulas e vídeos-tutoriais na internet ou mesmo em algum player no próprio computador. Em uma dessas aulas, o professor estava mostrando em seu slide um trecho de código javascript que me parecia interessante e eu queria copiá-lo para testar. O problema é que naquela <a href="https://youtu.be/Lz7U66RLC1E?t=1406">vídeo-aula específica</a>, como em muitos outros casos, nenhum link foi disponibilizado para acesso ao arquivo da apresentação ou para algum repositório de código referente à aula. O trecho de código era pequeno, mas perde-se muito tempo para transcrever coisas de vídeos-tutoriais ou de imagens. Isso me fez pensar que seria bom ter um programa que me permitisse capturar a imagem de uma parte da tela e obter o texto contido nela de forma automática. Nesse caso, eu poderia utilizá-lo obter texto de qualquer lugar de forma eficiente.</p>
+<p>Felizmente, com um pouco de pesquisa no google, pude encontrar o software <a href="http://capture2text.sourceforge.net/">Capture2Text</a>. Esse é um software de código aberto que faz exatamente o que precisava. O Capture2Text reconhece palavras em várias línguas: inglês, espanhol, francês, russo, português, entre outras. É possível baixá-lo <a href="https://sourceforge.net/projects/capture2text/">neste link do sourceforge</a>. Ele não possui um instalador, apenas execute o arquivo Capture2Text.exe e o programa ficará rodando em plano de fundo na bandeja, próximo ao relógio.</p>
+<p>Depois disso, apenas aperte as teclas <kbd>WINDOWNS</kbd> + <kbd>Q</kbd> para começar a captura de tela a partir do posicionamento atual do ponteiro do mouse. Ao arrastar o mouse, é criada um área de onde a imagem será capturada. Á medida que você cria a área para captura de tela, parte do texto vai sendo transcrito para um retângulo preto que fica na parte superior da tela.</p>
+<p><img src="/imagens/capture2text-1.png" width="100%" alt="Capture2Text - Usando Windows + Q para capturar a tela" /></p>
+<p>Após selecionar a região que se quer capturar, aperte <kbd>ENTER</kbd> para cortar e transcrever. A tela abaixo aparecerá com o texto completo reconhecido.</p>
+<p><img src="/imagens/capture2text-2.png" width="100%" alt="Resultado da captura e transcrição" /></p>
+<p>As opções de língua do OCR podem ser alteradas no ícone do programa que fica próximo ao relógio. Também é possível alterar as teclas de atalhos e realizar outras configurações em <em>Settings</em>.</p>
+<p><img src="/imagens/capture2text-3.png" alt="Alteração de idioma do OCR" /></p>
+<p>É preciso dizer, contudo, que o software pode não reconhecer o texto corretamente dependendo da qualidade da imagem ou da maneira que o texto está posicionado, podendo ser necessário fazer pequenos ajustes no texto reconhecido. De qualquer forma, já é um belo passo para aumentar a produtividade de um estudante que passe por essa mesma situação, independente da área de estudo.</p>
