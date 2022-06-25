@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Configurando o Robocode no Netbeans"
+title: Configurando o Robocode no Netbeans
 date: 2018-08-12 00:00:00 -0300
 tags: java jogo netbeans programação robocode
+permalink: /blog/2018/08/12/configurando-o-robocode-no-netbeans/
 ---
 
 <p>Analisando algumas abordagens para dar aulas de Java, me deparei com o Robocode. Robocode é um jogo de programação cujo objetivo é programar a lógica de um tanque robô para que ele derrote outros robôs em uma batalha de tanques. Me pareceu uma ideia um tanto interessante poder utilizar isso como trabalho de graduação e permitir que o aluno utilize Java para programar uma parte do jogo.</p>

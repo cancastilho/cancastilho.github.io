@@ -3,6 +3,7 @@ layout: post
 title: "Configurando servidor JavaDB (derby) no Netbeans 8.2"
 date: 2018-11-21 00:00:00 -0300
 tags: java
+permalink: /blog/2018/11/21/configurando-servidor-javadb-derby-no-netbeans-8-2/
 ---
 
 Se você tentou utilizar o JavaDB (derby) no Netbeans 8.2 com JDK 1.8, deve ter percebido que dá um problema ao tentar iniciar o servidor de banco de dados. Não tendo

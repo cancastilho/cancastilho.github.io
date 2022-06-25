@@ -3,6 +3,7 @@ layout: post
 title: Traduzindo texto como um expert usando o QTranslate
 date: 2017-12-17 00:00:00 -0300
 tags: dicas-de-estudo produtividade qtranslate tradução
+permalink: /blog/2017/12/17/traduzindo-texto-como-um-expert-usando-o-qtranslate/
 ---
 
 <p>Na minha área de atuação, a maioria dos artigos e documentações que preciso ler são encontrados somente em língua inglesa. Ocorre o mesmo em muitas outras profissões. Sabemos que é crucial nos manter atualizados sobre novos métodos, tecnologias e descobertas, mesmo que estejam escritos em outra língua.</p>

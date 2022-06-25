@@ -3,6 +3,7 @@ layout: post
 title:  "Listando conexões sde com arcpy"
 date:   2019-03-28 00:00:00 -0300
 tags: python add-in arcmap arcpy
+permalink: /blog/2019/03/28/listando-conexoes-sde-com-arcpy/
 ---
 
 Recentemente, precisei programar um add-in para o Arcmap que deveria listar as conexões de banco de dados usando a API do Arcpy criada pela ESRI. Porém, não havia uma função pronta para realizar isso. Elaborei o snippet abaixo para efetuar essa tarefa e estou disponibilizando aqui para futuras referências.

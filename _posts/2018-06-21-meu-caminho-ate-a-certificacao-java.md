@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Meu Caminho até a Certificação Java"
+title: Meu Caminho até a Certificação Java
 date: 2018-11-21 00:00:00 -0300
 tags: java
+permalink: /blog/2018/06/21/meu-caminho-ate-a-certificacao-java/
 ---
 
 <p>Se está pensando em se certificar, esse texto pode ser uma leitura interessante para você. Aqui escrevo meu ponto de vista sobre o valor da certificação na carreira pública, indico quais materiais utilizei para meu estudo e registro alguns erros não técnicos que cometi e não cometerei novamente.</p>

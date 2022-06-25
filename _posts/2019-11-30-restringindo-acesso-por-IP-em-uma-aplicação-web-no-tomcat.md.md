@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Restringindo acesso por IP em uma aplicação web no Tomcat"
+title:  Restringindo acesso por IP em uma aplicação web no Tomcat
 date:   2019-11-30 00:00:00 -0300
 tags: java Tomcat
+permalink: /blog/2019/11/30/restringindo-acesso-por-ip-em-uma-aplicacao-web-no-tomcat/
 ---
 
 

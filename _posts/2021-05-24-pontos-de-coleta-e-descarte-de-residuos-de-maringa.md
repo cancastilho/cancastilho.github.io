@@ -3,6 +3,7 @@ layout: post
 title:  "Pontos de coleta e descarte de resíduos de Maringá"
 date:   2021-05-24 00:00:00 -0300
 tags: arcgis online baterias descarte esri mapa Maringá pilha plástico reciclagem resíduos vidros
+permalink: /blog/2021/05/24/pontos-de-coleta-e-descarte-de-residuos-de-maringa/
 ---
 
 Aqui está um mapa da cidade de Maringá contendo os pontos de coleta e descarte de materiais. O mapa ainda não contém todos os pontos, mas é possível ter uma ideia de vários locais. Se você mora em Maringá e quer fazer o descarte correto de pilhas, baterias, medicamentos, móveis, plástico, papelão, vidro, eletrônicos, óleo de fritura e pneus, dê uma conferida no mapa.

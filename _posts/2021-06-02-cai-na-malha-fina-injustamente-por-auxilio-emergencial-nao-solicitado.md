@@ -3,6 +3,7 @@ layout: post
 title: "Caí na malha fina injustamente por auxílio emergencial não solicitado"
 date: 2021-06-02 00:00:00 -0300
 tags: imposto-de-renda malha-fina
+permalink: /blog/2021/06/02/cai-na-malha-fina-injustamente-por-auxilio-emergencial-nao-solicitado/
 ---
 
 <p>Se você ou algum dependente seu não solicitou auxílio emergencial, mas seu nome foi parar na malha fina porque supostamente teriam solicitado, esse texto é pra você.</p>

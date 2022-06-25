@@ -3,6 +3,7 @@ layout: post
 title:  "Mapa de bairros de Porto Alegre/RS"
 date:   2021-11-09 00:00:00 -0300
 tags: arcgis online
+permalink: /blog/2021/11/09/mapa-de-bairros-de-porto-alegre-rs/
 ---
 
 

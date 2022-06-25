@@ -3,6 +3,7 @@ layout: post
 title: "Estude de forma eficiente capturando texto de imagem"
 date: 2017-10-23 00:00:00 -0300
 tags: captura dicas-de-estudo ferramenta ocr produtividade screenshot windows
+permalink: /blog/2017/10/23/estude-de-forma-eficiente-capturando-texto-de-imagem/
 ---
 
 <p><img src="/imagens/capture-to-text-icone.png" alt="Capture2Text" /></p>

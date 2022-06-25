@@ -3,6 +3,7 @@ layout: post
 title: "Como configurar o Font Awesome 5 no WordPress 4.8.4?"
 date: 2018-01-14 00:00:00 -0300
 tags: child-theme fontawesome tema-filho wordpress
+permalink: /blog/2018/01/14/como-configurar-o-font-awesome-5-no-wordpress-4-8-4/
 ---
 
 
