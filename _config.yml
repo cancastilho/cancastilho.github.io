@@ -27,11 +27,15 @@ url: "https://cancastilho.com.br" # the base hostname & protocol for your site, 
 author: Carlos Nantes
 twitter_username: cancastilho
 github_username: cancastilho
+lang: pt-br
 
 # Build settings
 theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
+
+# jekyll-theme-hacker config
+repository_url: https://github.com/cancastilho/cancastilho.github.io
 
 # Exclude from processing.
 # The following items will not be processed, by default.
