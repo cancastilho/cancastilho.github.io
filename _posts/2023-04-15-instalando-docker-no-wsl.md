@@ -60,7 +60,9 @@ echo "teste" > index.html
 # para acessar o webserver rodando no docker do WSL a partir do windows, máquina host,
 # use um dos seguintes endereços no seu navegador http://localhost/ ou http://127.0.0.1/
 
-# para acessar a partir de outros computadores da rede é necessário criar uma regra de entrada no firewall  do windows para liberar a porta 80. Execute o comando abaixo como administrador no powershell:
+# para acessar a partir de outros computadores da rede é necessário criar uma regra de entrada
+# no firewall  do windows para liberar a porta 80. 
+# Execute o comando abaixo como administrador no powershell:
 netsh advfirewall firewall add rule name="WSL HTTP porta 80" dir=in action=allow protocol=TCP localport=80
 
 # além disso é necessário fazer um proxy executando o comando abaixo no powershell como administrador:
