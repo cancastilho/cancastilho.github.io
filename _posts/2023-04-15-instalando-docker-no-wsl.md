@@ -23,11 +23,9 @@ id
 sudo usermod -g docker $(whoami)
 
 # feche e abra o terminal e verifique se o usuário está no grupo do docker
-
-# verifique que o usuário agora está no grupo do docker
 id
 
-vi .profile
+vi ~/.profile
 
 # inclua isso no final do arquivo .profile:
 # Configuração para funcionar docker no wsl
