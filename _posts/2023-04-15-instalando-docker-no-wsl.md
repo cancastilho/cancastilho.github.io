@@ -20,7 +20,8 @@ sudo sh get-docker.sh
 id
 
 # Adicione o usuário no grupo o docker:
-sudo usermod -g docker $(whoami)
+# [Editado 22/04/2023]
+sudo usermod -aG docker $USER
 
 # feche e abra o terminal e verifique se o usuário está no grupo do docker
 id
@@ -66,8 +67,23 @@ netsh advfirewall firewall add rule name="WSL HTTP porta 80" dir=in action=allow
 # além disso é necessário fazer um proxy executando o comando abaixo no powershell como administrador:
 netsh interface portproxy add v4tov4 listenport=80 listenaddress=0.0.0.0 connectport=80 connectaddress=127.0.0.1
 
-# isso fará com que conexões na porta 80 vindas de qualquer endereço de IP (0.0.0.0) sejam encaminhadas
-# para a porta 80 do IP 127.0.0.1, que é onde está rodando o apache do WSL.
+# isso fará com que conexões na porta 80 vindas de qualquer endereço de IP (0.0.0.0) sejam encaminhadas 
+# para a porta 80 do IP 172.28.144.14, que é onde está rodando o apache do WSL.
+
+# [Editado 22/04/2023]
+# Estranhamente, após alguns testes o portproxy parou de funcionar usando o ip 127.0.0.1. 
+# Verifiquei que foi necessário usar o IP do Ubuntu instalado no WSL ao invés do ip 127.0.0.1, 
+# para que voltasse a funcionar o acesso a partir de outras máquinas.
+# Se esse for seu caso, faça o seguinte:
+# Obtenha o ip do seu linux instalado no WSL com o comando abaixo:
+ip a | grep inet | grep eth0
+# no meu caso retornou 
+# inet 172.28.144.14/20 brd 172.28.159.255 scope global eth0
+
+# Execute o powershell do windows como administrador e execute novamente o comando abaixo 
+# com o ip do linux no connectaddress
+netsh interface portproxy add v4tov4 listenport=80 listenaddress=0.0.0.0 connectport=80 connectaddress=172.28.144.14 # substitua 172.28.144.14 pelo IP do seu linux.
+# Feito! Agora é possível acessar seu servidor web na porta 80 a partir de outras máquinas da rede.
 ````
 
 Mais detalhes de como instalar o docker no WSL podem ser encontrados nas referências abaixo:
