@@ -68,7 +68,7 @@ netsh advfirewall firewall add rule name="WSL HTTP porta 80" dir=in action=allow
 netsh interface portproxy add v4tov4 listenport=80 listenaddress=0.0.0.0 connectport=80 connectaddress=127.0.0.1
 
 # isso fará com que conexões na porta 80 vindas de qualquer endereço de IP (0.0.0.0) sejam encaminhadas 
-# para a porta 80 do IP 172.28.144.14, que é onde está rodando o apache do WSL.
+# para a porta 80 do IP 127.0.0.1, que é onde está rodando o apache do WSL.
 
 # [Editado 22/04/2023]
 # Estranhamente, após alguns testes o portproxy parou de funcionar usando o ip 127.0.0.1. 
