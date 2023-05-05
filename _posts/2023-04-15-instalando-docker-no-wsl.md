@@ -4,9 +4,11 @@ title: "Instalando o docker no WSL"
 tags: wsl docker linux windows windows-subsystem-for-linux
 ---
 
-Depois de se acostumar a desenvolver sistemas web usando docker fica difícil voltar atrás. No linux, é fácil fazer a instalação do docker e tem muito material online que mostra como fazê-lo. Este artigo, porém, mostra como instalar o docker no Windows usando o Windows Subsystem for Linux (WSL). O procedimento abaixo foi testado em Windows 10 e Windows 11 e funcionou em ambos.
+Depois de se acostumar a desenvolver sistemas web usando docker fica difícil voltar atrás. No linux, é fácil fazer a instalação do docker e tem muito material online que mostra como fazê-lo. Este artigo, porém, mostra como instalar o docker no Windows usando o Windows Subsystem for Linux (WSL). O procedimento abaixo foi testado em Windows 10 e Windows 11 e funcionou em ambos. Caso prefira ver em vídeo, deixei publicado o passo-a-passo no Youtube:
 
-Antes de executar o procedimento abaixo você deve ativar o Windows Subsystem For Linux no Windows e instalar o Ubuntu. Veja [esta documentação da Microsoft](https://learn.microsoft.com/pt-br/windows/wsl/install-manual) que mostra como fazer isso. Recomendo também que instale o Windows Terminal, a partir da Microsoft Store, para ter um terminal decente para abrir o Ubuntu.
+<iframe  width="100%" height="500" src="https://www.youtube.com/embed/Fs-xQKDq504" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+Antes de executar o procedimento abaixo você deve ativar o Windows Subsystem For Linux no Windows e instalar o Ubuntu. Veja [esta documentação da Microsoft](https://learn.microsoft.com/pt-br/windows/wsl/install-manual) que mostra como fazer isso. Recomendo também que instale o Windows Terminal, a partir da Microsoft Store, para ter um terminal decente para abrir o Ubuntu. 
 
 Uma informação importante é que o WSL e o Virtual box não podem ser executados simultaneamente, então se ativar o WSL, após o reinício da máquina, suas máquinas virtuais do VirtualBox não irão mais funcionar até que você desative o WSL e reative a opção de "Plataforma de Máquina Virtual" na seção de "Adicionar e Remover Programas > Ativar ou desativar recursos do Windows". Isso não está claro na documentação da Microsoft, mas a experiência me mostrou que você não pode ter tudo o que quer.
 
